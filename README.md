@@ -9,7 +9,7 @@ A modern, fully responsive Snake game built with React and styled with tailwind-
 
 ### 🌐 Demo
 
-Visit the live demo: [Snake Game](#) 
+Visit the live demo: [Snake Game](http://react-snakegame.netlify.app/) 
 
 ### 🖼️ Screenshots
 | Start Screen | Gameplay |
