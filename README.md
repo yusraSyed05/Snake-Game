@@ -80,10 +80,10 @@ snake-game/
 5. **Complete Levels** - Reach the target score to advance
 6. **Progress** - Beat all 12 levels!
 
-### 🐛 Issues
+## 🐛 Issues
 If you discover any bugs, please report them in the [Issues](https://github.com/yusraSyed05/snake-game/issues) section.
 
-### 🤝 Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch 
@@ -91,6 +91,6 @@ If you discover any bugs, please report them in the [Issues](https://github.com/
 4. Push to the branch
 5. Open a Pull Request
 
-### 📄 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
