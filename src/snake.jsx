@@ -79,7 +79,7 @@ const SnakeGame = () => {
     if (lvl === 1) {
       return [];
     } else if (lvl === 2) {
-      // Corner decorations
+      
       const cornerSize = Math.max(2, Math.floor(gridSize * 0.15));
       for (let i = 0; i < cornerSize; i++) {
         wallsArray.push({ x: i, y: 0 });
@@ -92,13 +92,13 @@ const SnakeGame = () => {
         wallsArray.push({ x: maxIndex, y: maxIndex - i });
       }
     } else if (lvl === 3) {
-      // Border walls
+     
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
       }
     } else if (lvl === 4) {
-      // Border + center obstacle
+     
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -111,7 +111,6 @@ const SnakeGame = () => {
         }
       }
     } else if (lvl === 5) {
-      // Border + 4 corner obstacles
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -123,7 +122,7 @@ const SnakeGame = () => {
         { x: quarter, y: threeQuarter }, { x: threeQuarter, y: threeQuarter }
       );
     } else if (lvl === 6) {
-      // Border + horizontal bars
+      
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -144,7 +143,7 @@ const SnakeGame = () => {
         wallsArray.push({ x: i, y: barY2 });
       }
     } else if (lvl === 7) {
-      // Border + vertical bars
+      
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -165,7 +164,7 @@ const SnakeGame = () => {
         wallsArray.push({ x: barX2, y: i });
       }
     } else if (lvl === 8) {
-      // Border + cross pattern
+      
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -187,7 +186,7 @@ const SnakeGame = () => {
         { x: quarter, y: threeQuarter }, { x: threeQuarter, y: threeQuarter }
       );
     } else if (lvl === 9) {
-      // Border + T patterns
+     
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -214,7 +213,7 @@ const SnakeGame = () => {
       wallsArray.push({ x: center, y: topY }, { x: center - 1, y: topY });
       wallsArray.push({ x: center, y: bottomY }, { x: center - 1, y: bottomY });
     } else if (lvl === 10) {
-      // Border + maze-like pattern
+     
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
@@ -240,40 +239,35 @@ const SnakeGame = () => {
       const midY2 = Math.floor(gridSize * 0.55);
       wallsArray.push({ x: center, y: midY1 }, { x: center, y: midY2 });
     } else if (lvl === 11) {
-      // Border + complex corner pattern
+     
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
       }
       
       const cornerDist = Math.floor(gridSize * 0.2);
-      const cornerLen = Math.floor(gridSize * 0.15);
-      
-      // Top-left L
+      const cornerLen = Math.floor(gridSize * 0.15);     
+    
       for (let i = cornerDist; i < cornerDist + cornerLen; i++) {
         wallsArray.push({ x: i, y: cornerDist });
         wallsArray.push({ x: cornerDist, y: i });
       }
       
-      // Top-right L
       for (let i = maxIndex - cornerDist - cornerLen; i < maxIndex - cornerDist; i++) {
         wallsArray.push({ x: i, y: cornerDist });
         wallsArray.push({ x: maxIndex - cornerDist, y: i });
       }
       
-      // Bottom-left L
       for (let i = cornerDist; i < cornerDist + cornerLen; i++) {
         wallsArray.push({ x: cornerDist, y: maxIndex - i });
         wallsArray.push({ x: i, y: maxIndex - cornerDist });
       }
       
-      // Bottom-right L
       for (let i = maxIndex - cornerDist - cornerLen; i < maxIndex - cornerDist; i++) {
         wallsArray.push({ x: maxIndex - cornerDist, y: maxIndex - (i - (maxIndex - cornerDist - cornerLen)) - cornerDist });
         wallsArray.push({ x: i, y: maxIndex - cornerDist });
       }
       
-      // Center horizontal bar
       const center = Math.floor(gridSize / 2);
       const barStart = Math.floor(gridSize * 0.3);
       const barEnd = Math.floor(gridSize * 0.7);
@@ -281,19 +275,17 @@ const SnakeGame = () => {
         wallsArray.push({ x: i, y: center });
       }
     } else if (lvl >= 12) {
-      // Most complex pattern
+
       for (let i = 0; i < gridSize; i++) {
         wallsArray.push({ x: 0, y: i }, { x: maxIndex, y: i });
         wallsArray.push({ x: i, y: 0 }, { x: i, y: maxIndex });
       }
       
-      // Top horizontal line
       const topY = Math.floor(gridSize * 0.2);
       for (let i = Math.floor(gridSize * 0.2); i < Math.floor(gridSize * 0.8); i++) {
         wallsArray.push({ x: i, y: topY });
       }
       
-      // Three horizontal bars in middle
       const midY1 = Math.floor(gridSize * 0.4);
       const midY2 = Math.floor(gridSize * 0.6);
       const barStart1 = Math.floor(gridSize * 0.2);
@@ -310,7 +302,6 @@ const SnakeGame = () => {
         wallsArray.push({ x: i, y: midY2 });
       }
       
-      // Bottom horizontal line
       const bottomY = Math.floor(gridSize * 0.75);
       for (let i = Math.floor(gridSize * 0.2); i < Math.floor(gridSize * 0.8); i++) {
         wallsArray.push({ x: i, y: bottomY });
@@ -481,8 +472,7 @@ const SnakeGame = () => {
     directionRef.current = { x: 1, y: 0 };
     setScore(0);
     setShowLevelComplete(false);
-    
-    
+     
     let newFood;
     do {
       newFood = {
